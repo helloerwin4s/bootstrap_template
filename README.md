@@ -1,7 +1,8 @@
-# Bootstrap template
+# Gulp staterpack with Bootstrap
 
-Bootstrap Template is simple thing to use bootstrap for your frontend environment.
-Feature: 
+Gulp staterpack with Bootstrap is simple thing to use bootstrap for your frontend environment.
+Feature:
+- Gulp@^4.0.2
 - Bootstrap@^4.4.1
 - JQuery@^1.9.1
 - popper.js@^1.16.0

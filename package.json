@@ -1,7 +1,7 @@
 {
-  "name": "bootstrap_template",
+  "name": "Gulp staterpack with Bootstrap",
   "version": "1.0.0",
-  "description": "Bootstrap Template is simple thing to use bootstrap for your frontend environment",
+  "description": "Gulp staterpack with Bootstrap is simple thing to use bootstrap for your frontend environment",
   "main": "index.js",
   "scripts": {
     "clean": "gulp clean",
@@ -18,7 +18,8 @@
     "Bootstrap",
     "Template",
     "HTML",
-    "CSS"
+    "CSS",
+    "Gulp"
   ],
   "author": "helloerwin4s",
   "license": "MIT",
