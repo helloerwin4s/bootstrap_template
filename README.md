@@ -10,7 +10,7 @@ npm install
 
 ## Serve to browser
 ```bash
-npm run watch
+npm run serve
 ```
 Your browser automatically open http://localhost:9000/
 
