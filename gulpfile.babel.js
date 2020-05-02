@@ -10,11 +10,11 @@ export const clean = () => del('build');
 
 // task compile scss
 export const styles = () => {
-  return gulp.src('src/styles/**/*.scss')
-    // compile bootstrap
-    .pipe($.sass({includePaths: ['./node_modules']}))
+  return gulp.src('src/styles/main.scss')
     .pipe($.sass.sync().on('error', sass.logError))
-    .pipe(gulp.dest('/build/styles'));
+    .pipe($.cssmin())
+    .pipe($.rename({suffix: '.min'}))
+    .pipe(gulp.dest('build/styles'));
 };
 
 // watch
