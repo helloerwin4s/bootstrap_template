@@ -1,0 +1,36 @@
+{
+  "name": "bootstrap_template",
+  "version": "1.0.0",
+  "description": "Bootstrap Template is simple thing to use bootstrap for your frontend environment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helloerwin4s/bootstrap_template.git"
+  },
+  "keywords": [
+    "Bootstrap",
+    "Template",
+    "HTML",
+    "CSS"
+  ],
+  "author": "helloerwin4s",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helloerwin4s/bootstrap_template/issues"
+  },
+  "homepage": "https://github.com/helloerwin4s/bootstrap_template#readme",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "gulp": "^4.0.2",
+    "jquery": "^1.9.1",
+    "popper.js": "^1.16.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/register": "^7.9.0"
+  }
+}
