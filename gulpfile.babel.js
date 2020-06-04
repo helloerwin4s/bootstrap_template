@@ -3,6 +3,9 @@ import sass from 'gulp-sass';
 import plugins from 'gulp-load-plugins';
 import del from 'del';
 import browserSync from 'browser-sync';
+import webpack from 'webpack';
+import webpackStream from 'webpack-stream';
+import webpackConfig from './webpack.config.babel';
 
 const $ = plugins();
 
@@ -12,6 +15,8 @@ const paths = {
     'src/pages/**/*.pug',
   ],
   styles: 'src/styles/main.scss',
+  images: 'src/images/**/*',
+  javascript: 'src/scripts/**/*.js',
 };
 
 // clean directory build
@@ -35,6 +40,19 @@ export const pages = () => gulp.src(paths.pages)
   .pipe(gulp.dest('build'))
   .pipe(browserSync.stream());
 
+// task compile images
+export const images = () => gulp.src(paths.images, { since: gulp.lastRun(images) })
+  .pipe($.plumber())
+  .pipe($.newer('build/images'))
+  .pipe($.imagemin({ optimizationLevel: 5 }))
+  .pipe(gulp.dest('build/images'));
+
+// task compile javascript
+export const javascript = () => gulp.src(paths.javascript)
+  .pipe(webpackStream(webpackConfig), webpack)
+  .pipe(gulp.dest('build/scripts'))
+  .pipe(browserSync.stream());
+
 // serve
 const run = () => browserSync.init({
   port: '9000',
@@ -49,12 +67,29 @@ const run = () => browserSync.init({
 
 // watch
 export const watch = () => {
-  gulp.watch(paths.styles, gulp.series(styles));
-  gulp.watch(paths.pages, gulp.series(pages));
+  gulp.watch(paths.pages, pages);
+  gulp.watch(paths.styles, styles);
+  gulp.watch(paths.images, images);
+  gulp.watch(paths.javascript, javascript);
 };
 
 // serve
-export const serve = done => gulp.series(clean, styles, pages, gulp.parallel(run, watch))(done);
+export const serve = done => gulp.series(
+  clean,
+  styles,
+  pages,
+  images,
+  javascript,
+  gulp.parallel(run, watch),
+)(done);
 
 // build
-export const build = done => gulp.series(clean, gulp.series(styles, pages))(done);
+export const build = done => gulp.series(
+  clean,
+  gulp.series(
+    styles,
+    pages,
+    images,
+    javascript,
+  ),
+)(done);
