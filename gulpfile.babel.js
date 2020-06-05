@@ -67,10 +67,10 @@ const run = () => browserSync.init({
 
 // watch
 export const watch = () => {
-  gulp.watch(paths.pages, pages);
-  gulp.watch(paths.styles, styles);
-  gulp.watch(paths.images, images);
-  gulp.watch(paths.javascript, javascript);
+  gulp.watch(paths.pages, gulp.series(pages));
+  gulp.watch(paths.styles, gulp.series(styles));
+  gulp.watch(paths.images, gulp.series(images));
+  gulp.watch(paths.javascript, gulp.series(javascript));
 };
 
 // serve

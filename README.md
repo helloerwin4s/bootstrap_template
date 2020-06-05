@@ -6,6 +6,7 @@ Feature:
 - Bootstrap@^4.4.1
 - JQuery@^1.9.1
 - popper.js@^1.16.0
+- Gulp-pug@^4.0.1
 
 
 ## Installation
