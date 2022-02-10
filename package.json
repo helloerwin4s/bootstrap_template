@@ -54,7 +54,7 @@
     "gulp-pug-inheritance": "^0.2.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
-    "node-sass": "^4.14.0",
+    "node-sass": "^7.0.0",
     "webpack": "^4.43.0",
     "webpack-stream": "^5.2.1"
   }
