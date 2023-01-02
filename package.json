@@ -37,7 +37,7 @@
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
     "@babel/register": "^7.10.1",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^8.3.0",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
     "expose-loader": "^0.7.5",
@@ -55,7 +55,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "node-sass": "^7.0.0",
-    "webpack": "^4.43.0",
-    "webpack-stream": "^5.2.1"
+    "webpack": "^5.75.0",
+    "webpack-stream": "^7.0.0"
   }
 }
